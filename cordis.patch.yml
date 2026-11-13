@@ -1,0 +1,3 @@
+- insert:
+    - id: bib-lint
+      name: dsh-bib-lint

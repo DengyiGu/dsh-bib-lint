@@ -1,0 +1,72 @@
+{
+  "name": "dsh-bib-lint",
+  "version": "0.1.0",
+  "description": "Bibliography auditing for DeepSeek Harness: parse .bib files, check required fields and duplicates, verify DOIs against Crossref, format reference lists (GB/T 7714, APA, IEEE, Vancouver) and diff two revisions.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "bibtex",
+    "bibliography",
+    "citation",
+    "references",
+    "crossref",
+    "doi",
+    "academic-writing",
+    "gbt7714",
+    "apa",
+    "ieee",
+    "vancouver"
+  ],
+  "license": "MIT",
+  "author": "Dengyi Gu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DengyiGu/dsh-bib-lint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DengyiGu/dsh-bib-lint/issues"
+  },
+  "homepage": "https://github.com/DengyiGu/dsh-bib-lint#readme",
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": ">=0.2.2-rc.1 <0.3.0-0"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\"",
+    "check": "node --check index.js",
+    "verify": "node --check index.js && node --test \"test/**/*.test.js\""
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.2.2-rc.1 <0.3.0-0",
+    "@deepseek-ai/schemastery": ">=3.18.0 <4"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
